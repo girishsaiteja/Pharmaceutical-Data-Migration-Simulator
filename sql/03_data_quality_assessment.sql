@@ -331,7 +331,7 @@ FROM raw_data;
 
 
 --==============================================================
--- 14. DATA QUALITY SUMMARY
+-- 15. DATA QUALITY SUMMARY
 --==============================================================
 -- Overall summary of important quality issues (DUPLICATES).
 
