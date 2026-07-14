@@ -187,11 +187,13 @@ OR Y='0';
 SELECT
     FID,
     NAME,
-    TELEPHONE
+    TELEPHONE,
+    count(*) as missing_telephone
 FROM raw_data
 WHERE
     TELEPHONE IS NULL
-OR TELEPHONE='';
+OR TELEPHONE=''
+group by FID,NAME,TELEPHONE;
 
 
 
