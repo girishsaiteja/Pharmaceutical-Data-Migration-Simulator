@@ -222,7 +222,7 @@ SELECT
 FROM raw_data
 WHERE
     NPI IS NULL
-OR NPI='';
+    OR NPI='';
 
 
 
