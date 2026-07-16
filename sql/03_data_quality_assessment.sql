@@ -40,6 +40,16 @@ GROUP BY NPI
 HAVING COUNT(*) > 1;
 
 
+SELECT FID,
+       NAME,
+       NPI,
+       ENT_TYPE,
+       ORGAN_NAME
+FROM raw_data
+where NPI IS NULL
+OR NPI = '';
+
+
 
 --==============================================================
 -- 3. CHECK DUPLICATE PHARMACY RECORDS
@@ -104,6 +114,27 @@ WHERE
     ZIP IS NOT NULL
 AND ZIP <> ''
 AND LEN(ZIP) NOT IN (5,9);
+
+SELECT
+    state,
+    count(*)
+FROM raw_data
+WHERE
+    ZIP IS NOT NULL
+    AND ZIP <> ''
+    AND LEN(ZIP) = 4
+group by state;
+
+
+SELECT
+    state,
+    count(*)
+FROM raw_data
+WHERE
+    ZIP IS NOT NULL
+    AND ZIP <> ''
+    AND LEN(ZIP) = 5
+group by state;
 
 
 
