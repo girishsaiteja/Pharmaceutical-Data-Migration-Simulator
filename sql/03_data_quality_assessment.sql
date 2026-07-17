@@ -170,6 +170,9 @@ WHERE
 AND WEBSITE <> ''
 AND WEBSITE NOT LIKE 'http%';
 
+select FID,NAME,website from raw_data
+wherE WEBSITE IS NOT NULL;
+
 
 
 --==============================================================
