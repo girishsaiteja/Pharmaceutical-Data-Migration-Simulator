@@ -1,0 +1,13 @@
+UPDATE clean_data
+SET
+    CITY = UPPER(CITY),
+    COUNTRY = UPPER(COUNTRY),
+    STATE = UPPER(STATE);
+
+
+SELECT WEBSITE
+FROM raw_data
+WHERE WEBSITE COLLATE Latin1_General_BIN2 LIKE '%[a-z]%';
+UPDATE clean_data
+SET 
+    WEBSITE = LOWER
