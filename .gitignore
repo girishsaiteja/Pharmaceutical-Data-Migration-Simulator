@@ -1,7 +1,3 @@
-# Ignore the original dataset
 data/Pharmacies.csv
-
-# Keep the sample dataset
 !data/sample_pharmacies.csv
-
 **/.vs/

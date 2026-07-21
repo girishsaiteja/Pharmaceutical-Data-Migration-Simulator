@@ -374,6 +374,23 @@ PRINT @SQL;
 EXEC sp_executesql @SQL;
 
 
+/*STEP 22 : Normalize Address Fields
+-------------------------------------------------------------------------------
+Purpose:
+Remove leading and trailing spaces from address-related columns to improve
+data consistency and ensure accurate matching during migration.
+
+===========================================================================*/
+
+UPDATE clean_data
+SET
+    ADDRESS = LTRIM(RTRIM(ADDRESS)),
+    ADDRESS2 = LTRIM(RTRIM(ADDRESS2)),
+    CITY = LTRIM(RTRIM(CITY)),
+    STATE = LTRIM(RTRIM(STATE)),
+    ZIP = LTRIM(RTRIM(ZIP));
+
+
 /*===========================================================================
 END OF DATA CLEANING STAGE
 
@@ -388,3 +405,5 @@ Output:
 Next Stage:
 DATA VALIDATION
 ===========================================================================*/
+
+
